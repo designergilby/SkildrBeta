@@ -1,0 +1,854 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+body{
+	font-family: "Inter", sans-serif;
+	overflow: hidden;
+}
+
+h4{
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
+}
+
+textarea{
+	resize: none;
+}
+
+.container{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#chat_container{
+	opacity: 0;
+}
+
+.flexParent{
+	display: flex;
+	justify-content: space-between;
+}
+
+.backgroundElements{
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	z-index: -1;
+}
+
+.gridCont{
+	height: 100%;
+	margin-left: 50%;
+}
+
+.grid{
+	opacity: 50%;
+	height: 100%;
+}
+
+.tetris, .block{
+	position: absolute;
+	opacity: 50%;
+}
+
+.tetris{
+	animation: tetrisBounce 5s infinite;
+}
+
+.block{
+	animation: blockBounce 6s infinite;
+}
+
+/* ----------------------- START SCREEN ------------------------ */
+
+.startCont{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 30vh;
+	/* position: absolute; */
+}
+
+.startButton{
+	display: block;
+	border: solid 2px;
+	text-align: center;
+	text-decoration: none;
+	background-color: #F8E5FF;
+	filter: drop-shadow(0.5vw 0.5vw 0 #B689C6);
+	font-weight: 700;
+	color: #000;
+	cursor: pointer;
+}
+
+/* ----------------------- INPUT SCREEN ------------------------ */
+
+.skillInputCont{display: none;}
+
+/* ----------------------- LOADING SCREEN ------------------------ */
+
+.loadingScreen{
+	display: none;
+}
+
+/* ----------------------- ERROR SCREEN ------------------------ */
+
+.failedInputCont{
+	display: none;
+}
+
+/* ----------------------- TWEAK SCREEN ------------------------ */
+
+.lessonCont{
+	display: none;
+}
+
+/* ----------------------- EMAIL SCREEN ------------------------ */
+
+.emailInputCont{
+	display: none;
+}
+
+/* ----------------------- FINAL SCREEN ------------------------ */
+
+/* MOBILE STYLES ////////////////////////////////////////////////////////////////////////////////////////////////*/
+@media only screen and (max-width: 767px){
+	.container{
+		width:87.5%; /* 280 pixels at a 320 pixel screen width (iPhone 3 / 4 / 5) */
+	}
+
+	/* ----------------------- START SCREEN ------------------------ */
+	.tetris{
+		top: -10vw;
+		left: -20vw;
+		width: 40vh;
+		rotate: 45deg;
+	}
+
+	.block{
+		bottom: -10vw;
+		right: -20vw;
+		width: 40vh;
+	}
+
+	@keyframes tetrisBounce{
+		0%,100%{
+			top: -10vw;
+		}
+		50%{
+			top: -12vw;
+		}
+	}
+
+	@keyframes blockBounce{
+		0%,100%{
+			bottom: -10vw;
+		}
+		50%{
+			bottom: -12vw;
+		}
+	}
+
+	.skildrLogo{
+		width: 80vw;
+	}
+
+	.startButton{
+		font-size: 5vw;
+		padding-top: 4vw;
+		padding-bottom: 4vw;
+		padding-left: 1vw;
+		padding-right: 1vw;
+		border-radius: 1.75vw;
+		line-height: 2vw;
+		width: 50%;
+		margin-left: 25%;
+		border: solid 1px;
+		filter: drop-shadow(1.5vw 1.5vw 0 #B689C6);
+	}
+
+	/* ----------------------- INPUT SCREEN ------------------------ */
+
+	.skillInputCont{
+		
+	}
+
+	.inputCont{
+		position: absolute;
+		top: 5vh;
+		left: 7vw;
+	}
+
+	.inputText{
+		width: 75vw;
+		height: 60vh;
+		padding: 5vw;
+		border: solid 1px;
+		background-color: #fff;
+		filter: drop-shadow(1.5vw 1.5vw 0 #B689C6);
+		border-radius: 2vw;
+		overflow-x:scroll;
+		margin-bottom: 5vh;
+	}
+
+	.inputCopy{
+		font-size: 4vw;
+		line-height: 5vw;
+		font-weight: 300;
+	}
+
+	.inputHeading{
+		font-size: 7vw;
+		margin-top: 0vh;
+		margin-bottom: 0vh;
+		font-weight: 800;
+	}
+
+	#requestedSkill{
+		font-family: "Lato", sans-serif;
+		font-size: 5vw;
+		padding-top: 1vw;
+		padding-bottom: 1.8vw;
+		padding-left: 1.5vw;
+		height: 7vw;
+		border: solid 1px #000;
+		border-radius: 1.5vw;
+		filter: drop-shadow(1.5vw 1.5vw 0 #B689C6);
+		width: 82vw;
+	}
+
+	button{
+		margin-top: 4vh;
+		display: block;
+		border: solid 1px;
+		text-align: center;
+		text-decoration: none;
+		background-color: #F8E5FF;
+		background-image: none;
+		filter: drop-shadow(1.5vw 1.5vw 0 #B689C6);
+		font-weight: 700;
+		color: #000;
+		font-size: 5vw;
+		padding-top: 1vw;
+		padding-bottom: 1vw;
+		padding-left: 1vw;
+		padding-right: 1vw;
+		border-radius: 2vw;
+		line-height: 2vw;
+		width: 45%;
+		height: 10vw;
+		text-shadow: none;
+		font-family: "Lato", sans-serif;
+	}
+
+	button:hover{
+		background-image: none;
+	}
+
+	.nextBtn{
+		margin-top: 4vh;
+		display: block;
+		border: solid 1px;
+		text-align: center;
+		text-decoration: none;
+		background-color: #F8E5FF;
+		background-image: none;
+		filter: drop-shadow(1.5vw 1.5vw 0 #B689C6);
+		font-weight: 700;
+		color: #000;
+		font-size: 5vw;
+		padding-top: 1vw;
+		padding-bottom: 1vw;
+		padding-left: 1vw;
+		padding-right: 1vw;
+		border-radius: 2vw;
+		line-height: 7vw;
+		width: 43%;
+		height: 7.25vw;
+		text-shadow: none;
+		font-family: "Lato", sans-serif;
+		display: none;
+	}
+
+	.buttonsCont{
+		width: 100%;
+	}
+
+	#chat_container{
+		font-size: 1.75vw;
+
+	}
+
+	.afterSubmit{
+		display: none;
+	}
+
+	.chat{
+		font-size: 4vw;
+		line-height: 5vw;
+	}
+
+	.ai{
+		margin-top: 2.5vw;
+		font-weight: 200;
+		margin-bottom: 2vw;
+	}
+
+	.emailBox{
+		width: 80vw;
+		height: 50vh;
+		padding: 2vw;
+		border: solid 1px;
+		background-color: #fff;
+		filter: drop-shadow(1.5vw 1.5vw 0 #B689C6);
+		border-radius: 2vw;
+		overflow-x:scroll;
+		margin-left: 5vw;
+		margin-top: 25vh;
+	}
+
+	.emailBox h1{
+		text-align: center;
+	}
+
+	.emailBox p{
+		text-align: center;
+		font-size: 3vw;
+	}
+
+	.emailBox a{
+		margin-top: 10vh;
+		display: block;
+		border: solid 1px;
+		text-align: center;
+		text-decoration: none;
+		background-color: #F8E5FF;
+		background-image: none;
+		filter: drop-shadow(1.5vw 1.5vw 0 #B689C6);
+		font-weight: 700;
+		color: #000;
+		font-size: 5vw;
+		padding-top: 1vw;
+		padding-bottom: 1vw;
+		padding-left: 1vw;
+		padding-right: 1vw;
+		border-radius: 2vw;
+		line-height: 7vw;
+		width: 45vw;
+		height: 7.25vw;
+		text-shadow: none;
+		font-family: "Lato", sans-serif;
+		cursor: pointer;
+		margin-left: 15vw;
+	}
+	
+}
+
+/* TABLET STYLES ////////////////////////////////////////////////////////////////////////////////////////////////*/
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+	.container{
+		width:93.75%; /* 720 pixels at a 768 pixel screen width (iPads) */
+	}
+
+	/* ----------------------- START SCREEN ------------------------ */
+	.tetris{
+		top: -10vw;
+		left: -20vw;
+		width: 70vh;
+		rotate: 45deg;
+	}
+
+	.block{
+		bottom: -10vw;
+		right: -20vw;
+		width: 70vh;
+	}
+
+	@keyframes tetrisBounce{
+		0%,100%{
+			top: -10vw;
+		}
+		50%{
+			top: -12vw;
+		}
+	}
+
+	@keyframes blockBounce{
+		0%,100%{
+			bottom: -10vw;
+		}
+		50%{
+			bottom: -12vw;
+		}
+	}
+
+	.skildrLogo{
+		width: 40vw;
+	}
+
+	.startButton{
+		font-size: 2vw;
+		padding-top: 1.5vw;
+		padding-bottom: 1.5vw;
+		padding-left: 1vw;
+		padding-right: 1vw;
+		border-radius: 0.75vw;
+		line-height: 2vw;
+		width: 50%;
+		margin-left: 25%;
+	}
+
+	/* ----------------------- INPUT SCREEN ------------------------ */
+
+	.skillInputCont{
+		
+	}
+
+	.inputCont{
+		position: absolute;
+		top: 5vh;
+		left: 18vw;
+	}
+
+	.inputText{
+		width: 60vw;
+		height: 60vh;
+		padding: 2vw;
+		border: solid 3px;
+		background-color: #fff;
+		filter: drop-shadow(0.5vw 0.5vw 0 #B689C6);
+		border-radius: 0.5vw;
+		overflow-x:scroll;
+		margin-bottom: 5vh;
+	}
+
+	.submissionCont{
+		width: 60%;
+	}
+
+	.inputCopy{
+		font-size: 2.5vw;
+		line-height: 3vw;
+		font-weight: 300;
+	}
+
+	.inputHeading{
+		font-size: 5vw;
+		margin-top: 0vh;
+		margin-bottom: 0vh;
+		font-weight: 800;
+	}
+
+	#requestedSkill{
+		font-family: "Lato", sans-serif;
+		font-size: 2.5vw;
+		padding-top: 1.5vw;
+		padding-bottom: 1.8vw;
+		padding-left: 1vw;
+		height: 2vw;
+		border: solid 2px #000;
+		border-radius: 0.5vw;
+		filter: drop-shadow(0.5vw 0.5vw 0 #B689C6);
+		width: 63vw;
+	}
+
+	button{
+		margin-top: 5vh;
+		display: block;
+		border: solid 2px;
+		text-align: center;
+		text-decoration: none;
+		background-color: #F8E5FF;
+		background-image: none;
+		filter: drop-shadow(0.5vw 0.5vw 0 #B689C6);
+		font-weight: 700;
+		color: #000;
+		font-size: 2vw;
+		padding-top: 1vw;
+		padding-bottom: 1vw;
+		padding-left: 1vw;
+		padding-right: 1vw;
+		border-radius: 0.75vw;
+		line-height: 2vw;
+		width: 17vw;
+		height: 4.6vw;
+		text-shadow: none;
+		font-family: "Lato", sans-serif;
+	}
+
+	button:hover{
+		background-image: none;
+	}
+
+	.nextBtn{
+		margin-top: 3.7vw;
+		display: block;
+		border: solid 2px;
+		text-align: center;
+		text-decoration: none;
+		background-color: #F8E5FF;
+		background-image: none;
+		filter: drop-shadow(0.5vw 0.5vw 0 #B689C6);
+		font-weight: 700;
+		color: #000;
+		font-size: 2vw;
+		padding-top: 1vw;
+		padding-bottom: 1vw;
+		padding-left: 1vw;
+		padding-right: 1vw;
+		border-radius: 0.75vw;
+		line-height: 2vw;
+		width: 15vw;
+		/* height: 5vw; */
+		text-shadow: none;
+		font-family: "Lato", sans-serif;
+		display: none;
+	}
+
+	.buttonsCont{
+		width: 64vw;
+	}
+
+	#chat_container{
+		font-size: 2.25vw;
+
+	}
+
+	.afterSubmit{
+		display: none;
+	}
+
+	.chat{
+		font-size: 2vw;
+		line-height: 2.5vw;
+	}
+
+	.ai{
+		margin-top: 2vw;
+		font-weight: 300;
+		margin-bottom: 2vw;
+	}
+
+	.emailBox{
+		width: 40vw;
+		height: 50vh;
+		padding: 2vw;
+		border: solid 3px;
+		background-color: #fff;
+		filter: drop-shadow(0.5vw 0.5vw 0 #B689C6);
+		border-radius: 0.5vw;
+		overflow-x:scroll;
+		margin-left: 27vw;
+		margin-top: 25vh;
+	}
+
+	.emailBox h1{
+		text-align: center;
+	}
+
+	.emailBox p{
+		text-align: center;
+		font-size: 2vw;
+	}
+
+	.emailBox a{
+		margin-top: 5vw;
+		display: block;
+		border: solid 2px;
+		text-align: center;
+		text-decoration: none;
+		background-color: #F8E5FF;
+		background-image: none;
+		filter: drop-shadow(0.5vw 0.5vw 0 #B689C6);
+		font-weight: 700;
+		color: #000;
+		font-size: 1.5vw;
+		padding-top: 1vw;
+		padding-bottom: 1vw;
+		padding-left: 1vw;
+		padding-right: 1vw;
+		border-radius: 0.75vw;
+		line-height: 2vw;
+		width: 15vw;
+		/* height: 5vw; */
+		text-shadow: none;
+		font-family: "Lato", sans-serif;
+		z-index: 5;
+		margin-left: 11vw;
+		transition: 250ms;
+		cursor: pointer;
+	}
+
+}
+
+/* DESKTOP STYLES ////////////////////////////////////////////////////////////////////////////////////////////////*/
+@media only screen and (min-width: 1025px){
+	.container{
+		/*width:978px;*/
+		width:95.5%;
+	}
+
+	/* ----------------------- START SCREEN ------------------------ */
+
+	.tetris{
+		top: -10vw;
+		left: -20vw;
+		width: 70vh;
+		rotate: 45deg;
+	}
+
+	.block{
+		bottom: -10vw;
+		right: -20vw;
+		width: 70vh;
+	}
+
+	@keyframes tetrisBounce{
+		0%,100%{
+			top: -10vw;
+		}
+		50%{
+			top: -12vw;
+		}
+	}
+
+	@keyframes blockBounce{
+		0%,100%{
+			bottom: -10vw;
+		}
+		50%{
+			bottom: -12vw;
+		}
+	}
+
+	.skildrLogo{
+		width: 40vw;
+	}
+
+	.startButton{
+		font-size: 2vw;
+		padding-top: 1.5vw;
+		padding-bottom: 1.5vw;
+		padding-left: 1vw;
+		padding-right: 1vw;
+		border-radius: 0.75vw;
+		line-height: 2vw;
+		width: 50%;
+		margin-left: 25%;
+		transition: 250ms;
+		cursor: pointer;
+	}
+
+	.startButton:hover{
+		background-color: #B689C6;
+		color: #fff;
+		filter: drop-shadow(0vw 0vw 0 #B689C6);
+		border:solid #000 2px;
+	}
+
+	/* ----------------------- INPUT SCREEN ------------------------ */
+
+	.skillInputCont{
+		
+	}
+
+	.inputCont{
+		position: absolute;
+		top: 5vh;
+		left: 18vw;
+	}
+
+	.inputText{
+		width: 60vw;
+		height: 50vh;
+		padding: 2vw;
+		border: solid 3px;
+		background-color: #fff;
+		filter: drop-shadow(0.5vw 0.5vw 0 #B689C6);
+		border-radius: 0.5vw;
+		overflow-x:scroll;
+		margin-bottom: 5vh;
+	}
+
+	.submissionCont{
+		width: 60%;
+	}
+
+	.inputCopy{
+		font-size: 1.5vw;
+		line-height: 2vw;
+		font-weight: 300;
+	}
+
+	.inputHeading{
+		font-size: 3vw;
+		margin-top: 0vh;
+		margin-bottom: 0vh;
+		font-weight: 800;
+	}
+
+	#requestedSkill{
+		font-family: "Lato", sans-serif;
+		font-size: 2vw;
+		padding-top: 1.5vw;
+		padding-bottom: 1.8vw;
+		padding-left: 1vw;
+		height: 1vw;
+		border: solid 2px #000;
+		border-radius: 0.5vw;
+		filter: drop-shadow(0.5vw 0.5vw 0 #B689C6);
+		width: 63vw;
+	}
+
+	button{
+		margin-top: 5vh;
+		display: block;
+		border: solid 2px;
+		text-align: center;
+		text-decoration: none;
+		background-color: #F8E5FF;
+		background-image: none;
+		filter: drop-shadow(0.5vw 0.5vw 0 #B689C6);
+		font-weight: 700;
+		color: #000;
+		font-size: 1.5vw;
+		padding-top: 1vw;
+		padding-bottom: 1vw;
+		padding-left: 1vw;
+		padding-right: 1vw;
+		border-radius: 0.75vw;
+		line-height: 2vw;
+		width: 17vw;
+		height: 4.2vw;
+		text-shadow: none;
+		font-family: "Lato", sans-serif;
+		transition: 250ms;
+		cursor: pointer;
+	}
+
+	button:hover{
+		background-image: none;
+		background-color: #B689C6;
+		color: #fff;
+		filter: drop-shadow(0vw 0vw 0 #B689C6);
+		border:solid #000 2px;
+	}
+
+	.nextBtn{
+		margin-top: 2.6vw;
+		display: block;
+		border: solid 2px;
+		text-align: center;
+		text-decoration: none;
+		background-color: #F8E5FF;
+		background-image: none;
+		filter: drop-shadow(0.5vw 0.5vw 0 #B689C6);
+		font-weight: 700;
+		color: #000;
+		font-size: 1.5vw;
+		padding-top: 1vw;
+		padding-bottom: 1vw;
+		padding-left: 1vw;
+		padding-right: 1vw;
+		border-radius: 0.75vw;
+		line-height: 2vw;
+		width: 15vw;
+		/* height: 5vw; */
+		text-shadow: none;
+		font-family: "Lato", sans-serif;
+		display: none;
+		transition: 250ms;
+		cursor: pointer;
+	}
+
+	.nextBtn:hover{
+		background-color: #B689C6;
+		color: #fff;
+		filter: drop-shadow(0vw 0vw 0 #B689C6);
+		border:solid #000 2px;
+	}
+
+	.buttonsCont{
+		width: 64vw;
+	}
+
+	#chat_container{
+		font-size: 2vw;
+
+	}
+
+	.afterSubmit{
+		display: none;
+	}
+
+	.chat{
+		font-size: 1.5vw;
+		line-height: 2vw;
+	}
+
+	.ai{
+		margin-top: 2vw;
+		font-weight: 300;
+		margin-bottom: 2vw;
+	}
+
+	.emailBox{
+		width: 40vw;
+		height: 50vh;
+		padding: 2vw;
+		border: solid 3px;
+		background-color: #fff;
+		filter: drop-shadow(0.5vw 0.5vw 0 #B689C6);
+		border-radius: 0.5vw;
+		overflow-x:scroll;
+		margin-left: 27vw;
+		margin-top: 25vh;
+	}
+
+	.emailBox h1{
+		text-align: center;
+	}
+
+	.emailBox p{
+		text-align: center;
+		font-size: 1.5vw;
+	}
+
+	.emailBox a{
+		margin-top: 5vw;
+		display: block;
+		border: solid 2px;
+		text-align: center;
+		text-decoration: none;
+		background-color: #F8E5FF;
+		background-image: none;
+		filter: drop-shadow(0.5vw 0.5vw 0 #B689C6);
+		font-weight: 700;
+		color: #000;
+		font-size: 1.5vw;
+		padding-top: 1vw;
+		padding-bottom: 1vw;
+		padding-left: 1vw;
+		padding-right: 1vw;
+		border-radius: 0.75vw;
+		line-height: 2vw;
+		width: 15vw;
+		/* height: 5vw; */
+		text-shadow: none;
+		font-family: "Lato", sans-serif;
+		z-index: 5;
+		margin-left: 11vw;
+		transition: 250ms;
+		cursor: pointer;
+	}
+
+	.emailBox a:hover{
+		background-color: #B689C6;
+		color: #fff;
+		filter: drop-shadow(0vw 0vw 0 #B689C6);
+		border:solid #000 2px;
+	}
+
+}
