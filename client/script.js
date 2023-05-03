@@ -2,6 +2,10 @@
 // import bot from './assets/bot.svg'
 // import user from './assets/user.svg'
 
+// const { JSDOM }  = require( "jsdom" );
+// const { window } = new JSDOM( "" );
+// const $ = require( "jquery" )( window );
+
 const form = document.querySelector('form') //Calls in the form, where the user inputs chat.
 const chatContainer = document.querySelector('#chat_container') //Chat container contains all the messages from the user. 
 
